@@ -1,14 +1,14 @@
 use core::slice;
 
 pub fn test_array(){
-    init__basic_array();
+    init_basic_array();
     init_no_basic_array();
     array_slice();
 }
 
 
 // 基础类型的数组
-fn init__basic_array(){
+fn init_basic_array(){
     let a = [1,2,3,4,5];
     println!("{}",a[3]);
 }
