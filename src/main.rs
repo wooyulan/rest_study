@@ -1,6 +1,7 @@
 mod complex;
 mod process_control;
 mod t_match;
+mod method;
 
 
 fn main() {
@@ -24,6 +25,10 @@ fn main() {
     // process_control::t_pro_ctrl::test_process_control();
 
     // 模型匹配
-    t_match::t_match::test_match();
+    // t_match::t_match::test_match();
+
+    // 方法
+    //method::method::test_method();
+
 
 }
