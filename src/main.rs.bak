@@ -1,0 +1,136 @@
+fn main() {
+    // 变量不可变
+    let a = "hello world";
+    println!("the value of a is: {}", a);
+
+    // 可变变量
+    let mut b = 5;
+    println!("the value of b is:{}", b);
+    b = 10;
+    println!("the value of b is:{}", b);
+
+    // 如果一个变量创建了暂时不使用，可以使用_开头
+    let _c = 10;
+
+    // 变量解构
+
+    let (x, mut y): (bool, bool) = (true, false);
+    println!("x = {:?}, y = {:?}", x, y);
+    y = true;
+    assert_eq!(x, y);
+
+    let spaces = "    ";
+    let spaces: usize = spaces.len();
+    println!("spaces={:?}", spaces);
+
+    let abc: (f32, f32, f32) = (0.1, 0.2, 0.3);
+
+    println!("abc.2:{}", abc.1);
+
+    // 对于较长的数字，可以用_进行分割，提升可读性
+    let one_million: i64 = 1_000_000;
+    println!("{}", one_million.pow(2));
+
+    // 定义一个f32数组，其中42.0会自动被推导为f32类型
+    let forty_twos = [42.0, 42f32, 42.0_f32];
+
+    // 打印数组中第一个值，并控制小数位为2位
+    println!("{:.2}", forty_twos[0]);
+
+    // 序列
+    for i in 1..=5 {
+        println!("{}", i);
+    }
+
+    let x = '中';
+    println!("字符'中'占用了{}字节的内存大小", std::mem::size_of_val(&x));
+
+    let f: bool = false; // 使用类型标注,显式指定f的类型
+    if !f {
+        println!("这是段毫无意义的代码");
+    }
+
+    let m = add_with_extra(3, 2);
+    println!("{}", m);
+
+    string_test();
+    string_clone();
+    test();
+
+    //String 学习
+
+    study_string();
+
+}
+
+// 语句会执行一些操作但是不会返回一个值，而表达式会在求值后返回一个值
+fn add_with_extra(x: i32, y: i32) -> i32 {
+    let x = x + 1; // 语句
+    let y = y + 5; // 语句
+    x + y // 表达式
+}
+
+// 语句块表达式 ! 作函数返回类型的时候，表示该函数永不返回
+// fn block() -> ! {
+//     let  y = {
+//         let x = 3;
+//         x + 1   // 表达式不能包含分号。 表达式不能包含分号。 表达式不能包含分号。 表达式不能包含分号。 表达式不能包含分号。!!!!!!!!!!!
+//     };
+
+// }
+
+// String不是基本类型 存储在堆上  基本类型存储在栈
+
+/**
+ * String 类型是一个复杂类型，由存储在栈中的堆指针、字符串长度、字符串容量共同组成，其中堆指针是最重要的，它指向了真实存储字符串内容的堆内存
+ */
+fn string_test() {
+    let mut s = String::from("test");
+    println!("{}", s);
+
+    s.push_str(" rust");
+    println!("{}", s);
+}
+
+fn test() {
+    // 转移了所有权
+    let s1 = String::from("hello");
+    let s2 = s1;
+    println!("{}, world!", s2);
+}
+
+// 深拷贝
+fn string_clone() {
+    let s1 = String::from("rust clone");
+    let mut s2 = s1.clone();
+    chage(&mut s2);
+    println!("s1 = {}, s2 = {}", s1, s2);
+}
+
+// 可变引用
+fn chage(some_string: &mut String) {
+    some_string.push_str("hahhaha")
+}
+
+
+fn study_string(){
+    let mut string_pop = String::from("rust pop 中文!");
+    let p1 = string_pop.pop();
+    let p2 = string_pop.pop();
+    dbg!(p1);
+    dbg!(p2);
+    dbg!(string_pop);
+
+    let my_name = "Pascal";
+    greet(my_name.to_string());
+}
+
+fn greet(name: String) {
+    println!("Hello, {}!", name);
+  }
+
+
+
+
+
+
