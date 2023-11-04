@@ -3,12 +3,12 @@ use core::slice;
 
 // 字符串与切片调用入口
 pub fn test_str_slice() {
-    // greet("test".to_string());
-    // test_slice();
-    // test_slice_utf_8();
-    // test_str_2_addr();
-    // test_addr_2_str();
-    // test_str_operator();
+    greet("test".to_string());
+    test_slice();
+    test_slice_utf_8();
+    test_str_2_addr();
+    test_addr_2_str();
+    test_str_operator();
 }
 
 // test
