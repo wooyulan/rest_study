@@ -1,5 +1,6 @@
 mod complex;
 mod process_control;
+mod t_match;
 
 
 fn main() {
@@ -20,6 +21,9 @@ fn main() {
     // complex::t_array::test_array();
 
     /*:::: 流程控制 ::: */
-    process_control::t_pro_ctrl::test_process_control();
+    // process_control::t_pro_ctrl::test_process_control();
+
+    // 模型匹配
+    t_match::t_match::test_match();
 
 }
