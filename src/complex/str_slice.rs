@@ -1,6 +1,3 @@
-use core::slice;
-
-
 // 字符串与切片调用入口
 pub fn test_str_slice() {
     greet("test".to_string());
@@ -64,9 +61,9 @@ fn test_str_operator() {
      println!("追加字符串 push_str() -> {}", s);
 
     // 插入字符串
-    /**
-     * 一种中文是3个字节  3 6 9
-     */
+    // /**
+    //  * 一种中文是3个字节  3 6 9
+    //  */
     s.insert_str(3, "eric");
     println!("插入字符串 insert_str() -> {}", s);
 

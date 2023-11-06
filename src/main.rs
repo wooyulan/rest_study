@@ -1,7 +1,8 @@
 mod complex;
 mod process_control;
-mod t_match;
+mod matches;
 mod method;
+mod generics;
 
 
 fn main() {
@@ -25,10 +26,14 @@ fn main() {
     // process_control::t_pro_ctrl::test_process_control();
 
     // 模型匹配
-    // t_match::t_match::test_match();
+    // matches::t_match::test_match();
 
     // 方法
     //method::method::test_method();
+
+    // 泛型特征
+   // generics::gennerics::test_gennerics();
+    generics::traits::test_trait();
 
 
 }

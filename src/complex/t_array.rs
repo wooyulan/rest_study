@@ -1,5 +1,3 @@
-use core::slice;
-
 pub fn test_array(){
     init_basic_array();
     init_no_basic_array();
