@@ -16,7 +16,7 @@ impl Config {
         Config { query, file_path }
     }
 
-    fn build(args: &[String]) -> Result<Config, &'stati str> {
+    fn build(args: &[String]) -> Result<Config, &'static str> {
         if args.len() < 3 {
             // 'static 作用此error的生命周期
             return Err("not enough arguments");

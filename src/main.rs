@@ -9,6 +9,8 @@ mod formats;
 mod threads;
 mod files;
 
+mod livetime;
+
 fn main() {
 
     // 复合类型- 切片
@@ -46,8 +48,10 @@ fn main() {
     // threads::t_thread::test_thread();
 
     // 入门实战 -- 文件操作
-    files::file_option::test_file();
+    // files::file_option::test_file();
 
+    // 生命周期
+    livetime::livetime::test_live();
 
 
 
