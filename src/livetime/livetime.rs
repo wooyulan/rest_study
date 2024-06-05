@@ -23,3 +23,6 @@ fn test_example() {
    // foo.share();
     println!("{:?}", loan);
 }
+
+
+

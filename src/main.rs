@@ -1,4 +1,7 @@
 
+use std::collections::HashMap;
+
+
 
 mod complex;
 mod generics;
@@ -12,6 +15,7 @@ mod files;
 mod livetime;
 
 fn main() {
+
 
     // 复合类型- 切片
     //complex::str_slice::test_str_slice();
@@ -45,13 +49,13 @@ fn main() {
     // formats::format::test_format();
 
     // 多线程
-    // threads::t_thread::test_thread();
+     threads::t_thread::test_thread();
 
     // 入门实战 -- 文件操作
     // files::file_option::test_file();
 
     // 生命周期
-    livetime::livetime::test_live();
+    // livetime::livetime::test_live();
 
 
 

@@ -1,11 +1,12 @@
 pub fn test_thread(){
-    te_thread();
-    thread_barrier();
+    // te_thread();
+    // thread_barrier();
+    test_channel();
 }
 
 
 
-use std::sync::{Arc, Barrier};
+use std::sync::{Arc, Barrier, mpsc};
 use std::thread;
 use std::time::Duration;
 
@@ -52,3 +53,15 @@ fn thread_barrier(){
 
 }
 
+
+fn test_channel(){
+
+    let(ts,rx) = mpsc::channel();
+
+    thread::spawn(move || {
+        let val = "test".to_string();
+        ts.send(val).unwrap();
+    });
+    let receive  =rx.recv().unwrap();
+    println!("get:{}",receive);
+}
